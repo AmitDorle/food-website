@@ -1,7 +1,19 @@
 import express from "express";
-
+// const mongoose = require("mongoose")
 const app = express();
-app.use(express.json());
+
+// const Food = require('./model/food')
+
+// require('dotenv').config()
+// const PORT = process.env.PORT || 5000;
+app.use(express.json())
+
+//temp database
+//let tasks = [];
+
+// mongoose.connect(process.env.MONGODB_URI, () => {
+//     console.log("connected to MongoDB Database.....")
+// })
 
 // user array as temporary database
 const db = [{

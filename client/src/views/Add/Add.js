@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Add.css";
+import { Link } from "react-router-dom";
 
 function Add(props) {
   function Delete() {
@@ -26,9 +27,9 @@ function Add(props) {
           </button>
         </div>
         <div>
-          <button type="button" className="update-button" onClick={Update}>
+          <Link to="/Update" ><button type="button" className="update-button" onClick={Update}>
             Update
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>
