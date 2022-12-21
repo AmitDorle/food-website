@@ -1,5 +1,8 @@
 import {React , useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import Add from '../Add/Add'
+import "./Show.css"
+
 
 import axios from "axios"
 
@@ -19,10 +22,15 @@ useEffect(()=>{
 
   return (
     <div>
+      <div className='Add-item-btn-container'>
+        <Link to="/AddItem"><button className='add-item-btn'>Add Food Item</button></Link>
+      </div>
+    
+    <div className="row">
         {
         foodItems.map((item)=>
         {
-            return <div>
+            return <div className="col-md-4">
                 <Add id={item.id} 
                      title={item.title}
                      category={item.category}
@@ -31,6 +39,7 @@ useEffect(()=>{
         }
         )
         }
+    </div>
     </div>
   )
 }

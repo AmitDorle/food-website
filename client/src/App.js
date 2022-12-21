@@ -3,6 +3,7 @@ import {BrowserRouter , Routes ,Route} from "react-router-dom"
 import Show from "./views/Show/Show"
 import Add from "./views/Add/Add"
 import AddItem from './views/AddItem/AddItem';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

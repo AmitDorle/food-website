@@ -18,7 +18,13 @@ const db = [{
 },
 {
   id: 3,
-  title: 'Mutton-rogan-josh',
+  title: 'Mutton',
+  price: 250,
+  category: 'lunch'
+},
+{
+  id: 4,
+  title: 'Chicken tikka',
   price: 250,
   category: 'lunch'
 }]

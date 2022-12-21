@@ -1,40 +1,41 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import "./AddItem.css"
 
 function AddItem() {
 
-    const [id , setId] = useState("")
-    const [title , setTitle] = useState("")
-    const [category , setCategory] = useState("")
-    const [price , setPrice] = useState("")
+  const [id, setId] = useState("")
+  const [title, setTitle] = useState("")
+  const [category, setCategory] = useState("")
+  const [price, setPrice] = useState("")
 
-async function Add()
-{
-    const response = await axios.post('/add-food-item' , 
-    {
-        "id" : id,
-        "title" : title,
-        "category" : category,
-        "price" : price
-    })
-    if(response){
-        alert('Item added successfully')
-        window.location.href="/"
-       }
+  async function Add() {
+    const response = await axios.post('/add-food-item',
+      {
+        "id": id,
+        "title": title,
+        "category": category,
+        "price": price
+      })
+    if (response) {
+      alert('Item added successfully')
+      window.location.href = "/"
     }
-  
-    return (
-      <div>
-        <h1>Add Food Item</h1>
+  }
+
+  return (
+    <div className='add-food-item-container'>
+      <div className='food-details-container'>
         <form>
-         <input type="number" placeholder='Enter ID' onChange={(e)=>{setId(e.target.value)}} /> <br /><br />
-         <input type="text" placeholder='Enter Title' onChange={(e)=>{setTitle(e.target.value)}}/> <br /><br />
-         <input type="text" placeholder='Enter Category' onChange={(e)=>{setCategory(e.target.value)}}/> <br /><br />
-         <input type="number" placeholder='Enter Price' onChange={(e)=>{setPrice(e.target.value)}}/> <br /><br /><br />
-  
+          ID<br /><input type="number" className='box-style' placeholder='Enter ID' onChange={(e) => { setId(e.target.value) }} /><br /><br /> 
+          Title<br /><input type="text" className='box-style' placeholder='Enter Title' onChange={(e) => { setTitle(e.target.value) }} /><br /><br /> 
+          Category<br /><input type="text" className='box-style' placeholder='Enter Category' onChange={(e) => { setCategory(e.target.value) }} /><br /><br /> 
+          Price<br /><input type="number" className='box-style' placeholder='Enter Price' onChange={(e) => { setPrice(e.target.value) }} /><br /><br /> 
+
           <button type="button" onClick={Add}>Add Food Item</button>
         </form>
       </div>
-    )
-  }
+    </div>
+  )
+}
 export default AddItem
