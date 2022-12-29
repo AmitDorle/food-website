@@ -21,7 +21,7 @@ useEffect(()=>{
 } ,)
 
   return (
-    <div>
+    <div className='showDiv'>
       <div className='Add-item-btn-container'>
         <Link to="/AddItem"><button className='add-item-btn'>Add Food Item</button></Link>
       </div>
