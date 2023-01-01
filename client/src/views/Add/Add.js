@@ -1,15 +1,19 @@
 import React from "react";
 import axios from "axios";
 import "./Add.css";
+import swal from 'sweetalert'
 import { Link } from "react-router-dom";
 
 function Add(props) {
-  function Delete() {
-    axios.get("/delete-food-item-by-id");
-  }
-
-  function Update() {
-    axios.get("/delete-food-item-by-id");
+  function deleteFood(id) {
+    axios.post('/delete_food', { id: id }).then((res) => {
+      swal({
+        title: "Item deleted",
+        text: "Item deleted successfully!",
+        icon: "success",
+      })
+      window.location.reload();
+    })
   }
 
   return (
@@ -22,14 +26,14 @@ function Add(props) {
       </h4>
       <div className="button-container">
         <div>
-          <button type="button" className="delete-button" onClick={Delete}>
+          <button type="button" className="delete-button" onClick={(e) => { deleteFood(props.id) }}>
             Delete
           </button>
         </div>
         <div>
-          <Link to="/Update" ><button type="button" className="update-button" onClick={Update}>
-            Update
-          </button></Link>
+        <Link to={`/Update/${props.id}`}>
+          <button className='update-button'>Update</button>
+        </Link>
         </div>
       </div>
     </div>

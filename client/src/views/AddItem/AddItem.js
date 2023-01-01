@@ -32,7 +32,7 @@ function AddItem() {
           Category<br /><input type="text" className='box-style' placeholder='Enter Category' onChange={(e) => { setCategory(e.target.value) }} /><br /><br /> 
           Price<br /><input type="number" className='box-style' placeholder='Enter Price' onChange={(e) => { setPrice(e.target.value) }} /><br /><br /> 
 
-          <button type="button" className='add-food-btn' onClick={add}>Add</button>
+          <button type="button" className='add-foodd-btn' onClick={add}>Add</button>
         </form>
       </div>
     </div>

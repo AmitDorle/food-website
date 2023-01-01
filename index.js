@@ -56,6 +56,61 @@ app.post('/add-food-item', async(req, res) => {
   })
 })
 
+app.post('/delete_food', async (req, res) => {
+  const id = req.body.id;
+  const results = await Food.deleteOne({ id: id });
+
+  /*let index = -1;
+
+  tasks.map((task, i) => {
+      if (id === task.id) {
+          index = i;
+      }
+  })
+  tasks.splice(index, 1)*/
+
+  res.json({
+      'status': 'success',
+      'massage': `successfully deleted task with id : ${id}`,
+      'data': results
+  })
+
+
+})
+app.post('/get_food', async (req, res) => {
+  const id = req.body.id;
+
+  const specificFood = await Food.findOne({ id: id });
+
+  res.json({
+      'status': 'success',
+      // 'data': resultTask
+      'data': specificFood
+  })
+})
+
+
+app.post('/update_food', async (req, res) => {
+  const id = req.body.id;
+  const title = req.body.title;
+  const price = req.body.price;
+  const category = req.body.category;
+ 
+  const updateResult = await Food.updateOne({ id: id }, {
+      $set: {
+          title: title,
+          price: price,
+          category: category,
+      }
+  })
+  res.json({
+      'status': 'success',
+      'massage': ' Item updated successfully ',
+      'data': updateResult
+  })
+})
+
+
 app.get('/food-item-by-id', (req, res)=>{
   // read id from query params
   const id = req.query.id
