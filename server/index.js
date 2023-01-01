@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv"
+import path from "path";
+
+const __dirname = path.resolve();
 
 import Food from './model/food.js'
 
@@ -153,7 +156,13 @@ app.get('/delete-food-item-by-id', (req, res)=>{
   })
 })
 
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
+  app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+  });
+}
 
 
 

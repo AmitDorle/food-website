@@ -1,6 +1,7 @@
 .food-container
 {
     background-color: white;
+    background-image: url('./bg.webp');
     padding: 15px;
     margin: 10px;
     color: rgb(113, 116, 114);
