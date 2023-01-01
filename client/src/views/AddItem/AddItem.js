@@ -24,7 +24,7 @@ function AddItem() {
   }
 
   return (
-    <div className='add-food-item-container'>
+    <div className='add-food-container'>
       <div className='food-details-container'>
         <form> 
           Id<br /><input type="text" className='box-style' placeholder='Enter ID' onChange={(e) => { setId(e.target.value) }} /><br /><br /> 

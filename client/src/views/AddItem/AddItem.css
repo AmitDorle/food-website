@@ -8,15 +8,11 @@
     border: none;
     box-shadow: 0px 0px 3px rgb(156, 224, 218);
   }
-.add-food-item-container
+.add-food-container
 {
     display: flex;
     justify-content: center;
-    /* background: rgb(238, 174, 202);
-    background: radial-gradient(circle, rgb(226, 215, 228) 0%, rgb(233, 199, 199) 100%); */
-    background-color: rgb(212, 228, 243);
-    padding: auto;
-    min-height: 490px;
+    padding: 10px;
 }
 .food-details-container
 {
@@ -24,9 +20,10 @@
     text-align: center;
     font-size: 20px;
     width: 280px;
+    height: 450px;
     color: crimson;
     font-family: 'Times New Roman', Times, serif;
-    background-color: whitesmoke;
+    background-color: rgb(226, 238, 236);
     padding: 10px;
     border: 5px double red;
     border-radius: 20px;
