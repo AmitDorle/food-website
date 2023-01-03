@@ -7,6 +7,8 @@ const __dirname = path.resolve();
 
 import Food from './model/food.js'
 
+mongoose.set('strictQuery', true);
+
 dotenv.config()
 const app = express();
 
